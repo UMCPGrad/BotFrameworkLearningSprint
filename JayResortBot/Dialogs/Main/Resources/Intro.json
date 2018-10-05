@@ -1,0 +1,30 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "body": [
+        {
+            "type": "Image",
+            "url": "http://www.mcm-backpacks.com/img/2018/08/all-inclusive-resorts-will-wow-your-family-vacation-packages-vacations-families-with-toddlers-caribbean-holidays-recommended-budget-affordable-kid-friendly-activities-airfare.jpg",
+            "size": "stretch"
+        },
+          {
+            "type": "TextBlock",
+            "spacing":"medium",
+            "size": "default",
+            "weight":"bolder",
+            "text": "Welcome to Contoso All Inclusive Resorts!",
+            "wrap": true,
+            "maxLines": 0
+        },
+        {
+            "type": "TextBlock",
+            "size": "default",
+            "isSubtle": "yes",
+            "text": "Now that you've arrived at your long awaited luxury vacation, let me walk you through scheduling an activity for you to enjoy.",
+            "wrap": true,
+            "maxLines": 0
+        }
+    ]
+}
+ 

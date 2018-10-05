@@ -1,0 +1,103 @@
+{
+    "name": "JayResortBot",
+    "description": "",
+    "services": [
+        {
+            "type": "abs",
+            "id": "49",
+            "name": "JayResortBot",
+            "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+            "subscriptionId": "5793b1d9-df4e-410f-8b56-4bb0a6e4960f",
+            "resourceGroup": "JayResortBot",
+            "serviceName": "JayResortBot",
+            "appId": "27dc380c-d57b-4b1c-851e-dd057d4cd0e5"
+        },
+        {
+            "type": "endpoint",
+            "id": "1",
+            "name": "development",
+            "appId": "27dc380c-d57b-4b1c-851e-dd057d4cd0e5",
+            "appPassword": "uPygw8IZeNdueqBMsIPxoQ==!F8iDYEiq7WIiyVpk3RBkvQalc1NhyO3PtWrsiPT5Ngg=",
+            "endpoint": "http://localhost:3978/api/messages"
+        },
+        {
+            "type": "endpoint",
+            "id": "30",
+            "name": "production",
+            "appId": "27dc380c-d57b-4b1c-851e-dd057d4cd0e5",
+            "appPassword": "msTZ1co+y/Cj2jljkO1YQg==!P0GmrExn8sDU5qhnhb6Y6LuNAKzmr3QEGr/i2QIS8+M=",
+            "endpoint": "https://ayesortot6y64.azurewebsites.net/api/messages"
+        },
+        {
+            "type": "appInsights",
+            "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+            "subscriptionId": "5793b1d9-df4e-410f-8b56-4bb0a6e4960f",
+            "resourceGroup": "JayResortBot",
+            "name": "JayResortBotpjqmph",
+            "serviceName": "JayResortBotpjqmph",
+            "instrumentationKey": "dDnQLpnu5rUeMm40GYYCXQ==!vY0GkrdD4awDKYGVX3aRUFGpDt0aiyzUPNiNZti3gRvsNHEOIMmgGGwtqTFTr+DU",
+            "applicationId": "dae45f3a-f838-412f-a10e-e10a2e37fd4f",
+            "apiKeys": {},
+            "id": "3"
+        },
+        {
+            "type": "blob",
+            "id": "2",
+            "name": "ayesortt6pc",
+            "serviceName": "ayesortt6pc",
+            "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+            "subscriptionId": "5793b1d9-df4e-410f-8b56-4bb0a6e4960f",
+            "resourceGroup": "JayResortBot",
+            "connectionString": "eK9CjyRZ5oXmoeEG+6nhwA==!6hoRLf9OBHRn/rhZD9tmwarrpQSA7wi8kWskuy5J7BNx3LABEjda+sk1CpUWDK63KEp7TLFUK7J/08CZ5fVB2habTrodt5Cw2Y/sfipMLdSWuCvGTAbPRvw7rhpmq/h2+nuDO+Zei7Ddh1xNCONVm1cIt8xmrwliOd5pmEaOOwOSalckeVjYvSrshq7fkyYbDCVVNpAbpskTlF/xPTlIh30wTDKYYIXGsdAtDISzvA3BqMEBXP5i7Uo5jq7FugGa",
+            "container": "transcripts"
+        },
+        {
+            "type": "cosmosdb",
+            "id": "8",
+            "name": "jayresortbot",
+            "serviceName": "jayresortbot",
+            "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+            "subscriptionId": "5793b1d9-df4e-410f-8b56-4bb0a6e4960f",
+            "resourceGroup": "JayResortBot",
+            "endpoint": "https://jayresortbot.documents.azure.com:443/",
+            "key": "UFblva3y0Fhi6w4+3PpW2g==!jQ63xYWa71UGDkZD5+QpCLT3PKgrj/+QEO3W7EyVWOh98x54V2tMTz1/Xi+pWphSnKDG56401BlRUoO/ipxMAXIyuqkrEQ90nloRYuISsMsqwq8SuIRwGEev+Uf71jKP",
+            "database": "botstate-db",
+            "collection": "botstate-collection"
+        },
+        {
+            "type": "luis",
+            "name": "JayResortBot_General",
+            "appId": "8963e94e-9289-40a9-a5db-ea447f9d9480",
+            "authoringKey": "Tkk8ZDXTOO/kteuJnF5b1g==!EbbIhD/nm0Q5p1WNgtocD88SofGGpVQP+sR2xK60vsxnkQ4VkTf0vhHug1Nc/O4V",
+            "subscriptionKey": "dDyDfsJZJRxN2uFsXJne6w==!rlVEFx7e+E6BI1fpCkBrqqagLRIPBUnczX+L/UANB7AcE30HqPu5hEZLQLds+c5B",
+            "version": "0.1",
+            "region": "westus",
+            "id": "general"
+        },
+        {
+            "type": "qna",
+            "name": "FAQ",
+            "id": "faq",
+            "kbId": "15c25e03-88f4-49e1-91f4-7a08b3477028",
+            "subscriptionKey": "Jd4IXS8FCKyj3ASekXcpZA==!/kjaHkNLRNAxYjpZJxYupGeoPIBC95UkGUmEavM+3JhRKkd5cmz/VAurwJu8xoTJ",
+            "endpointKey": "Y3R8IjaVx3rye00Nim4jrQ==!XjvY+isSsG5mn8LVeBdEPB6FncwIssPEJK6ZtxjE8D6x1/fjFlVjlSvYrwBP17Wy",
+            "hostname": "https://jayresortbot-qnahost.azurewebsites.net/qnamaker"
+        },
+        {
+            "type": "dispatch",
+            "serviceIds": [
+                "general",
+                "faq"
+            ],
+            "name": "JayResortBot_Dispatch",
+            "appId": "e2236dac-09bf-43b2-b57e-c964382cbd02",
+            "authoringKey": "au1oVwCW+u+p4kRTdNU36g==!FfdoXtvuRVbZYPk0uALBV7EEC091mYvkMmSb40934hFAQ8ISrVeah7T7V+sjMTo3",
+            "subscriptionKey": "M2OOSxaeoQ7xvSruy21LUg==!algOvEU4WN0Y8OeDXe5YUZ0vjz5UJYwRKqzD9KwHf/9QmpgOs/poqYrHbjseR1LT",
+            "version": "Dispatch",
+            "region": "westus",
+            "id": "dispatch"
+        }
+    ],
+    "padlock": "tuF1c86fecivOkMuQJjfMQ==!KbBZDyRbHhVVmLy3T6KDGgfe1oN07IKAR7xMEpmxdbxj/iFemrN54LJXkuRhSUGF",
+    "version": "2.0"
+}
