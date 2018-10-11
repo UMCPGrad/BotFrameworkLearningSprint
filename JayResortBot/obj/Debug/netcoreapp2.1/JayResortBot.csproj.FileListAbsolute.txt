@@ -20,3 +20,4 @@ C:\Users\jaherrin\Documents\Visual Studio 2017\Projects\JayResortBot\JayResortBo
 C:\Users\jaherrin\Documents\Visual Studio 2017\Projects\JayResortBot\JayResortBot\obj\Debug\netcoreapp2.1\JayResortBot.pdb
 C:\Users\jaherrin\Documents\Visual Studio 2017\Projects\JayResortBot\JayResortBot\bin\Debug\netcoreapp2.1\JayResortBot.bot
 C:\Users\jaherrin\Documents\Visual Studio 2017\Projects\JayResortBot\JayResortBot\obj\Debug\netcoreapp2.1\JayResortBot.Dialogs.Activity.Resources.ActivityStrings.resources
+C:\Users\jaherrin\Documents\Visual Studio 2017\Projects\JayResortBot\JayResortBot\obj\Debug\netcoreapp2.1\JayResortBot.csprojResolveAssemblyReference.cache

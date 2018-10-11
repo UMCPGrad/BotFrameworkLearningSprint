@@ -142,6 +142,6 @@
     <value>You currently do not have any reservations scheduled.</value>
   </data>
   <data name="SHOW_RESERVATIONS" xml:space="preserve">
-    <value>You currently have {0} reservations scheduled!</value>
+    <value>These are your activity reservations that are scheduled! {0}</value>
   </data>
 </root>

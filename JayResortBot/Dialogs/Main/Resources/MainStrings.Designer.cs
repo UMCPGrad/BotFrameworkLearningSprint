@@ -133,7 +133,7 @@ namespace JayResortBot.Dialogs.Main.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You currently have {0} reservations scheduled!.
+        ///   Looks up a localized string similar to These are your activity reservations that are scheduled! {0}.
         /// </summary>
         public static string SHOW_RESERVATIONS {
             get {

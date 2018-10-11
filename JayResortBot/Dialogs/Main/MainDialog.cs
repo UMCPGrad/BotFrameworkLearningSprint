@@ -2,6 +2,7 @@
 // Licensed under the MIT License.
 
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -91,8 +92,13 @@ namespace JayResortBot
                                 }
                                 else
                                 {
-                                    var reservations = ReservationRepository._reservations.Count;
-                                    await _responder.ReplyWith(dc.Context, MainResponses.Show_Reservations, new  { reservations } );
+                                    string listOfReservations = "";
+                                    foreach (var item in ReservationRepository._reservations)
+                                    {
+                                        listOfReservations = listOfReservations + item.ToString(); 
+                                    }
+                                    
+                                    await _responder.ReplyWith(dc.Context, MainResponses.Show_Reservations, new  { listOfReservations } );
                                 }
 
                                 break;

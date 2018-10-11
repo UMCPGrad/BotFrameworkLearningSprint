@@ -32,7 +32,7 @@ namespace JayResortBot
                 { Confused, (context, data) => MainStrings.CONFUSED },
                 { Greeting, (context, data) => MainStrings.GREETING },
                 { No_Reservations, (context, data) => MainStrings.NO_RESERVATIONS },
-                { Show_Reservations, (context, data) => string.Format(MainStrings.SHOW_RESERVATIONS, data.reservations) },
+                { Show_Reservations, (context, data) => string.Format(MainStrings.SHOW_RESERVATIONS, data.listOfReservations) },
                 { Help, (context, data) => SendHelpCard(context, data) },
                 { Intro, (context, data) => SendIntroCard(context, data) },
             },
