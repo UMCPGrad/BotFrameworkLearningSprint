@@ -18,6 +18,8 @@ namespace JayResortBot
         public const string Completed = "completed";
         public const string Confused = "confused";
         public const string Greeting = "greeting";
+        public const string No_Reservations = "no_reservations";
+        public const string Show_Reservations = "show_reservations";
         public const string Help = "help";
         public const string Intro = "intro";
 
@@ -29,6 +31,8 @@ namespace JayResortBot
                 { Completed, (context, data) => MainStrings.COMPLETED },
                 { Confused, (context, data) => MainStrings.CONFUSED },
                 { Greeting, (context, data) => MainStrings.GREETING },
+                { No_Reservations, (context, data) => MainStrings.NO_RESERVATIONS },
+                { Show_Reservations, (context, data) => string.Format(MainStrings.SHOW_RESERVATIONS, data.reservations) },
                 { Help, (context, data) => SendHelpCard(context, data) },
                 { Intro, (context, data) => SendIntroCard(context, data) },
             },

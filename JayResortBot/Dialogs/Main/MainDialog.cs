@@ -87,11 +87,12 @@ namespace JayResortBot
                             {
                                 if (ReservationRepository._reservations.Count == 0)
                                 {
-                                    await _responder.ReplyWith(dc.Context, MainResponses.Greeting);
+                                    await _responder.ReplyWith(dc.Context, MainResponses.No_Reservations);
                                 }
                                 else
                                 {
-                                    await _responder.ReplyWith(dc.Context, "You have " + ReservationRepository._reservations.Count + "reservations!");
+                                    var reservations = ReservationRepository._reservations.Count;
+                                    await _responder.ReplyWith(dc.Context, MainResponses.Show_Reservations, new  { reservations } );
                                 }
 
                                 break;

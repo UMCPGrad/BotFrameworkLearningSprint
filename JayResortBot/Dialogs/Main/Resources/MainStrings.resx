@@ -127,7 +127,7 @@
     <value>I'm sorry, I'm not able to help with that.</value>
   </data>
   <data name="GREETING" xml:space="preserve">
-    <value>Hi there!</value>
+    <value>Hi there!!</value>
   </data>
   <data name="GREETING_WITH_NAME" xml:space="preserve">
     <value>Hey, {0}!</value>
@@ -140,5 +140,8 @@
   </data>
   <data name="NO_RESERVATIONS" xml:space="preserve">
     <value>You currently do not have any reservations scheduled.</value>
+  </data>
+  <data name="SHOW_RESERVATIONS" xml:space="preserve">
+    <value>You currently have {0} reservations scheduled!</value>
   </data>
 </root>

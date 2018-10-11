@@ -88,7 +88,7 @@ namespace JayResortBot.Dialogs.Main.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hi there!.
+        ///   Looks up a localized string similar to Hi there!!.
         /// </summary>
         public static string GREETING {
             get {
@@ -129,6 +129,15 @@ namespace JayResortBot.Dialogs.Main.Resources {
         public static string NO_RESERVATIONS {
             get {
                 return ResourceManager.GetString("NO_RESERVATIONS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You currently have {0} reservations scheduled!.
+        /// </summary>
+        public static string SHOW_RESERVATIONS {
+            get {
+                return ResourceManager.GetString("SHOW_RESERVATIONS", resourceCulture);
             }
         }
     }
