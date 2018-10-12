@@ -45,22 +45,67 @@ namespace JayResortBot
         /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
         public async Task OnTurnAsync(ITurnContext turnContext, CancellationToken cancellationToken)
         {
-            var dc = await _dialogs.CreateContextAsync(turnContext);
-            var result = await dc.ContinueDialogAsync();
-
-            if (result.Status == DialogTurnStatus.Empty)
+            try
             {
-                if (turnContext.Activity.Type == ActivityTypes.ConversationUpdate)
+                var dc = await _dialogs.CreateContextAsync(turnContext);
+
+                if(turnContext.Activity.Type == ActivityTypes.ConversationUpdate)
                 {
                     var activity = turnContext.Activity.AsConversationUpdateActivity();
+                    var membersAdded = activity.MembersAdded ?? Array.Empty<ChannelAccount>();
 
-                    // if conversation update is not from the bot.
-                    if (!activity.MembersAdded.Any(m => m.Id == activity.Recipient.Id))
+                    switch (turnContext.Activity.ChannelId)
                     {
-                        await dc.BeginDialogAsync(nameof(MainDialog));
+                        case "webchat":
+                            // Web Doesn't send conversation updated until the user says hi, so we make sure we show this early
+                            if (membersAdded.Any(m => m.Id == activity.Recipient.Id))
+                            {
+                                await dc.BeginDialogAsync(nameof(MainDialog), cancellationToken: cancellationToken);
+                            }
+                            break;
+                        default:
+                            if (membersAdded.All(m=>m.Id != activity.Recipient.Id))
+                            {
+                                await dc.BeginDialogAsync(nameof(MainDialog), cancellationToken: cancellationToken);
+                            }
+                            break;
                     }
                 }
+                else if (turnContext.Activity.Type == ActivityTypes.Message)
+                {
+                    if (turnContext.Activity.ChannelId == "cortana" && string.IsNullOrEmpty(turnContext.Activity.Text))
+                    {
+                        // hack to handle open "botname" with no utterance in cortana
+                        turnContext.Activity.Type = ActivityTypes.ConversationUpdate;
+                        await dc.BeginDialogAsync(nameof(MainDialog), cancellationToken: cancellationToken);
+                    }
+                    else
+                    {
+                        var result = await dc.ContinueDialogAsync();
+
+                        if (result.Status == DialogTurnStatus.Empty)
+                        {
+                            await dc.BeginDialogAsync(nameof(MainDialog), cancellationToken: cancellationToken);
+
+                            //if (turnContext.Activity.Type == ActivityTypes.ConversationUpdate)
+                            //{
+                            //    var activity = turnContext.Activity.AsConversationUpdateActivity();
+
+                            //    // if conversation update is not from the bot.
+                            //    if (!activity.MembersAdded.Any(m => m.Id == activity.Recipient.Id))
+                            //    {
+                            //        await dc.BeginDialogAsync(nameof(MainDialog));
+                            //    }
+                            //}
+                        }
+                    }
+                } 
             }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+                throw;
+            } 
         }
     }
 }
