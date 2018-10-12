@@ -27,7 +27,8 @@ namespace Luis
             None, 
             ReserveActivity, 
             ShowReservations, 
-            Restart
+            Restart,
+            SpaServices
         };
         public Dictionary<Intent, IntentScore> Intents;
 

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using JayResortBot.Dialogs.Activity;
+using JayResortBot.Dialogs.SpaServices;
 using JayResortBot.Repository;
 using Luis;
 using Microsoft.Bot.Builder;
@@ -32,6 +33,8 @@ namespace JayResortBot
             // AddDialog(new EscalateDialog(_services));
 
             AddDialog(new ActivityDialog(_services, _userState.CreateProperty<ActivityState>(nameof(ActivityState)), _userState.CreateProperty<OnboardingState>(nameof(OnboardingState))));
+
+            AddDialog(new SpaServicesDialog(_services, _userState.CreateProperty<SpaServicesState>(nameof(SpaServicesState)), _userState.CreateProperty<OnboardingState>(nameof(OnboardingState))));
         }
 
         protected override async Task OnStartAsync(DialogContext innerDc, CancellationToken cancellationToken = default(CancellationToken))
@@ -77,6 +80,13 @@ namespace JayResortBot
                     // switch on general intents
                     switch (generalIntent)
                     {
+                        case General.Intent.SpaServices:
+                            {
+                                var activityAccessor = _userState.CreateProperty<SpaServicesState>(nameof(SpaServicesState));
+                                var activityState = await activityAccessor.GetAsync(dc.Context, () => new SpaServicesState());
+                                await dc.BeginDialogAsync(nameof(SpaServicesDialog));
+                                break;
+                            }
                         case General.Intent.ReserveActivity:
                             {
                                 var activityAccessor = _userState.CreateProperty<ActivityState>(nameof(ActivityState));

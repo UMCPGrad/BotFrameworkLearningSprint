@@ -59,6 +59,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>SignInStrings.resx</DependentUpon>
     </Compile>
+    <Compile Update="Dialogs\SpaServices\Resources\SpaServicesStrings.Designer.cs">
+      <DependentUpon>SpaServicesStrings.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -85,6 +90,10 @@
     <EmbeddedResource Update="Dialogs\SignIn\Resources\SignInStrings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>SignInStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Dialogs\SpaServices\Resources\SpaServicesStrings.resx">
+      <LastGenOutput>SpaServicesStrings.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
   </ItemGroup>
 
